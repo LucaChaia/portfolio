@@ -1,6 +1,10 @@
 body {
   margin: 0;
+  background-color: #151338;
+  color: white;
+  font-family: "Jost";
 }
+/* Navbar section */
 
 nav.navbar {
   background-color: dimgray;
@@ -26,4 +30,36 @@ nav.navbar ul li a {
 
 nav.navbar ul li a:hover {
   color: grey;
+}
+
+/* Hero Section */
+div.hero {
+  padding-top: 0;
+  background-image: linear-gradient(
+    to top,
+    #1e3c72 0%,
+    #1e3c72 1%,
+    #2a5298 100%
+  );
+}
+
+div.hero h1 {
+  color: white;
+  margin-top: 0;
+  padding-top: 2rem;
+  margin-bottom: 0;
+}
+
+div.hero p {
+  margin-top: 0.5rem;
+}
+
+/* Portfolio Outline Section */
+div.portfolio-outline {
+  display: flex;
+  justify-content: space-around;
+}
+
+div.portfolio-item {
+  background-color: black;
 }
