@@ -91,6 +91,23 @@ div.hero img {
   width: auto;
 }
 
+/* Image Break */
+.home-image-break {
+  width: 90%;
+  margin: 2rem auto;
+  border: 2px solid white;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.home-image-break img {
+  display: block;
+  width: 100%;
+  max-height: 24rem;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
 /* Luca Stuff Section */
 .luca-stuff {
   width: 90%;
