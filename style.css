@@ -91,12 +91,62 @@ div.hero img {
   width: auto;
 }
 
-/* Portfolio Outline Section */
-div.portfolio-outline {
-  display: flex;
-  justify-content: space-around;
+/* Luca Stuff Section */
+.luca-stuff {
+  width: 90%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1.5rem;
 }
 
-div.portfolio-item {
-  background-color: black;
+.luca-stuff > div {
+  background-color: rgb(30, 29, 35);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 2px solid white;
+}
+
+.luca-stuff h2 {
+  margin-top: 0;
+}
+
+.luca-stuff p {
+  line-height: 1.6;
+}
+
+.luca-stuff a {
+  text-decoration: none;
+  color: rgb(103, 100, 117);
+}
+
+.luca-stuff a:hover {
+  color: rgb(146, 136, 189);
+}
+
+/* Portfolio Outline Section */
+.portfolio-links h2 {
+  text-align: center;
+}
+
+div.portfolio-outline {
+  width: 90%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+}
+
+div.portfolio-outline .portfolio-item {
+  display: block;
+  background-color: rgb(30, 29, 35);
+  color: white;
+  text-decoration: none;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 2px solid white;
+}
+
+div.portfolio-outline .portfolio-item:hover {
+  background-color: #111;
 }
