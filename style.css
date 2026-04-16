@@ -147,10 +147,6 @@ div.portfolio-outline .portfolio-item {
   border: 2px solid white;
 }
 
-div.portfolio-outline .portfolio-item:hover {
-  background-color: #111;
-}
-
 /* Resume Section */
 .resume-page {
   width: 90%;
@@ -188,4 +184,74 @@ div.portfolio-outline .portfolio-item:hover {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/* Socials */
+.socials-intro {
+  display: block;
+  background-color: rgb(30, 29, 35);
+  color: white;
+  text-decoration: none;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 2px solid white;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.socials-container {
+  width: 90%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.social-box {
+  background-color: rgb(30, 29, 35);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 2px solid white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+
+.social-box,
+.portfolio-item {
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+a.social-box:hover,
+div.portfolio-outline .portfolio-item:hover {
+  background-color: #111;
+  transform: translateY(-2px);
+}
+
+.social-logo {
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.social-logo img {
+  max-height: 100%;
+  max-width: 8rem;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.social-box p {
+  line-height: 1.5;
 }
