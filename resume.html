@@ -14,19 +14,35 @@
   </head>
   <body>
     <nav class="navbar">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/interests">Interests</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/resume">Resume</a></li>
-        <li><a href="/socials">Socials</a></li>
-      </ul>
+      <div class="nav-inner">
+        <a href="/" class="nav-brand">Luca Chaia</a>
+
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <ul class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/interests">Interests</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/resume">Resume</a></li>
+          <li><a href="/socials">Socials</a></li>
+        </ul>
+      </div>
     </nav>
-     <main class="resume-page">
-      <section class="resume-header">
+    <main class="resume-page container">
+      <section class="resume-header panel">
         <h1>Resume</h1>
         <p>View my resume below or download a copy.</p>
-        <a class="resume-download" href="assets/docs/LucaChaia_Resume_PublicFacing.pdf" download>
+        <a
+          class="resume-download btn"
+          href="assets/docs/LucaChaia_Resume_PublicFacing.pdf"
+          download
+        >
           Download Resume
         </a>
       </section>
@@ -37,5 +53,16 @@
           title="Luca Chaia Resume"
         ></iframe>
       </section>
+    </main>
+    <script>
+      const navToggle = document.querySelector(".nav-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+        const expanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!expanded));
+      });
+    </script>
   </body>
 </html>

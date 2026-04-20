@@ -12,32 +12,45 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <nav class="navbar">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/interests">Interests</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/resume">Resume</a></li>
-        <li><a href="/socials">Socials</a></li>
-      </ul>
+      <div class="nav-inner">
+        <a href="/" class="nav-brand">Luca Chaia</a>
+
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <ul class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/interests">Interests</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/resume">Resume</a></li>
+          <li><a href="/socials">Socials</a></li>
+        </ul>
+      </div>
     </nav>
 
     <main>
-      <div class="interests-intro">
+      <div class="interests-intro container panel">
         <h1>Interests & Extracurriculars</h1>
         <p>
-          Outside of class, I have been most drawn to communities and projects
-          that combine technical work with leadership, collaboration, and
-          real-world impact. These experiences have helped shape how I approach
-          both learning and building.
+          Outside of class, I am most drawn to communities and projects that
+          fuse technical expertise with leadership, collaboration, and tangible
+          impact. These experiences have shaped my approach to both learning and
+          building.
         </p>
       </div>
 
-      <div class="interests-container">
+      <div class="interests-container container card-grid">
         <a
           href="https://blueprintboulder.org/"
-          class="interest-box"
+          class="interest-box card"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -51,7 +64,7 @@
           <p>
             Blueprint Boulder was one of my favorite ways to use technical
             skills in a practical setting. I enjoyed being part of a team that
-            built software for nonprofits, because the work had a meaningful and
+            built software for nonprofits because the work had a meaningful,
             measurable impact. It pushed me to think more carefully about the
             kinds of tools I was building and how they could genuinely help the
             people they were meant to serve.
@@ -60,7 +73,7 @@
 
         <a
           href="https://www.colorado.edu/amath/organizations/asa-data-buffs"
-          class="interest-box"
+          class="interest-box card"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -74,17 +87,16 @@
           <p>
             Data Buffs gave me the opportunity to combine technical curiosity
             with leadership. As president, I enjoyed helping create a space
-            where students could learn about data science in a hands-on and
-            approachable way. More than anything, I liked being part of a
-            community that encouraged people to ask questions, build confidence,
-            and explore how data science can be relevant across many different
-            fields.
+            where students could learn data science in a hands-on, approachable
+            way. More than anything, I liked being part of a community that
+            encouraged people to ask questions, build confidence, and explore
+            how data science can be relevant across many different fields.
           </p>
         </a>
 
         <a
           href="https://blueprint-boulder.github.io/website-workshop-fa24/index.html"
-          class="interest-box"
+          class="interest-box card"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -98,8 +110,8 @@
           <p>
             One thing I have found especially rewarding is helping other
             students feel more comfortable with technology. Teaching others has
-            made me a better communicator and a more thoughtful builder because
-            I have to prioritize what's actually important for a beginner. I
+            made me a better communicator and a more thoughtful builder, because
+            I have to prioritize what's actually important to beginners. I
             learned that you're only communicating with someone else when you
             both understand what's going on. Otherwise, you're just talking to
             them.
@@ -107,5 +119,16 @@
         </a>
       </div>
     </main>
+
+    <script>
+      const navToggle = document.querySelector(".nav-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+        const expanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!expanded));
+      });
+    </script>
   </body>
 </html>

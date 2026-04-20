@@ -14,27 +14,39 @@
   </head>
   <body>
     <nav class="navbar">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/interests">Interests</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/resume">Resume</a></li>
-        <li><a href="/socials">Socials</a></li>
-      </ul>
+      <div class="nav-inner">
+        <a href="/" class="nav-brand">Luca Chaia</a>
+
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <ul class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/interests">Interests</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/resume">Resume</a></li>
+          <li><a href="/socials">Socials</a></li>
+        </ul>
+      </div>
     </nav>
     <main>
-      <div class="socials-intro">
+      <div class="socials-intro container panel">
         <h1>Where To Find Me</h1>
         <p>
-          I'm active across a few key platforms that serve distinct purposes.
-          I'm always down to make new connections and to learn from each other.
+          I'm active on several platforms with different purposes. I always
+          enjoy connecting and learning from others.
         </p>
       </div>
 
-      <div class="socials-container">
+      <div class="socials-container container card-grid">
         <a
           href="https://github.com/LucaChaia"
-          class="social-box"
+          class="social-box card"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -46,14 +58,14 @@
           </div>
           <h2>GitHub</h2>
           <p>
-            <strong>Why this site matters:</strong> GitHub is the main
-            repository for both my academic and personal coding projects. It's
-            where I share the work behind what I build.
+            <strong>Why this site matters:</strong> GitHub is my main repository
+            for academic and personal coding projects. Here I share the work
+            that drives what I build.
           </p>
         </a>
         <a
           href="https://www.linkedin.com/in/luca-chaia/"
-          class="social-box"
+          class="social-box card"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -63,13 +75,13 @@
           <h2>LinkedIn</h2>
           <p>
             <strong>Why this site matters:</strong> LinkedIn is my main source
-            of connections. It's the best place to find the most up-to-date
-            information about my professional background.
+            for connections. It's where you'll find the latest on my
+            professional background.
           </p>
         </a>
         <a
           href="https://lucachaia.itch.io/"
-          class="social-box"
+          class="social-box card"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -81,12 +93,22 @@
           </div>
           <h2>itch.io</h2>
           <p>
-            <strong>Why this site matters:</strong> Itch.io allows content
-            creators to create a community for the projects they're working on.
-            I use it to share my creative projects, including video games.
+            <strong>Why this site matters:</strong> itch.io lets creators build
+            communities around their projects. I use it to share creative
+            projects, including video games.
           </p>
         </a>
       </div>
     </main>
+    <script>
+      const navToggle = document.querySelector(".nav-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+        const expanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!expanded));
+      });
+    </script>
   </body>
 </html>
