@@ -11,16 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <script>
-      const navToggle = document.querySelector(".nav-toggle");
-      const navMenu = document.querySelector(".nav-menu");
-
-      navToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("open");
-        const expanded = navToggle.getAttribute("aria-expanded") === "true";
-        navToggle.setAttribute("aria-expanded", String(!expanded));
-      });
-    </script>
   </head>
   <body>
     <nav class="navbar">
@@ -45,7 +35,7 @@
       </div>
     </nav>
     <main>
-      <div class="hero">
+      <div class="hero container">
         <div class="hero-text">
           <!-- Heading -->
           <h1>Luca Chaia</h1>
@@ -56,8 +46,8 @@
           <img src="assets/images/hero-image.jpg" alt="" />
         </div>
       </div>
-      <div class="luca-stuff">
-        <div class="about-me">
+      <div class="luca-stuff container card-grid">
+        <div class="about-me panel">
           <h2>About Me</h2>
           <p>
             Welcome! I'm a Computer Science student at CU Boulder. I use math
@@ -72,7 +62,7 @@
             creative thinking.
           </p>
         </div>
-        <div class="why-portfolio">
+        <div class="why-portfolio panel">
           <h2>Why I Made This Portfolio</h2>
           <p>
             This portfolio brings together the projects, experiences, and
@@ -92,35 +82,45 @@
           </p>
         </div>
       </div>
-      <div class="home-image-break">
+      <div class="home-image-break container">
         <img
           src="assets/images/boulder-flatirons.jpeg"
           alt="Picture of Flatirons."
         />
       </div>
-      <div class="portfolio-links">
+      <div class="portfolio-links container">
         <h2>What you'll find in the rest of the portfolio</h2>
-        <div class="portfolio-outline">
-          <a class="portfolio-item" href="/interests">
+        <div class="portfolio-outline card-grid">
+          <a class="portfolio-item card" href="/interests">
             <h3>My Interests</h3>
             <p>Learn more about me and my non-academic interests.</p>
           </a>
-          <a class="portfolio-item" href="/projects">
+          <a class="portfolio-item card" href="/projects">
             <h3>My Projects</h3>
             <p>
               A showcase of my knowledge in a variety of computer science topics
             </p>
           </a>
-          <a class="portfolio-item" href="/resume">
+          <a class="portfolio-item card" href="/resume">
             <h3>My Resume</h3>
             <p>Viewable online and available for download</p>
           </a>
-          <a class="portfolio-item" href="/socials">
+          <a class="portfolio-item card" href="/socials">
             <h3>My Socials</h3>
             <p>Connect with me!</p>
           </a>
         </div>
       </div>
     </main>
+    <script>
+      const navToggle = document.querySelector(".nav-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+        const expanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!expanded));
+      });
+    </script>
   </body>
 </html>

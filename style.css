@@ -22,9 +22,12 @@ body {
   font-family: "Jost", sans-serif;
 }
 
+img {
+  max-width: 100%;
+}
+
 .container {
-  width: var(--content-width);
-  max-width: var(--content-max);
+  width: min(var(--content-width), var(--content-max));
   margin: 2rem auto;
 }
 
@@ -59,35 +62,32 @@ body {
   transform: translateY(-2px);
 }
 
-.card h1,
-.card h2,
-.card h3,
 .panel h1,
 .panel h2,
-.panel h3 {
+.panel h3,
+.card h1,
+.card h2,
+.card h3 {
   margin-top: 0;
 }
 
-@media (max-width: 768px) {
-  .card-grid,
-  .luca-stuff,
-  .projects-container,
-  .interests-container,
-  .socials-container,
-  .portfolio-outline {
-    grid-template-columns: 1fr;
-  }
-
-  .home-image-break img {
-    max-height: 16rem;
-  }
-
-  .resume-viewer {
-    height: 60vh;
-  }
+.panel p,
+.card p {
+  line-height: 1.6;
 }
 
-/* Navbar section */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.25rem;
+  background-color: var(--panel);
+  color: var(--text);
+  text-decoration: none;
+  border: var(--border);
+  border-radius: var(--radius);
+}
+
+/* Navbar */
 .navbar {
   background-color: dimgray;
   position: sticky;
@@ -96,8 +96,7 @@ body {
 }
 
 .nav-inner {
-  width: var(--content-width);
-  max-width: var(--content-max);
+  width: min(var(--content-width), var(--content-max));
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -139,6 +138,180 @@ body {
   color: grey;
 }
 
+/* Hero */
+.hero {
+  background: linear-gradient(
+    180deg,
+    rgba(227, 227, 227, 1) 0%,
+    rgba(227, 227, 227, 1) 75%,
+    rgba(57, 56, 64, 1) 100%
+  );
+  border: var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 30vh;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+}
+
+.hero h1 {
+  color: black;
+  font-size: clamp(3rem, 10vw, 6rem);
+  margin: 0;
+}
+
+.hero p {
+  color: grey;
+  font-size: clamp(1.25rem, 5vw, 3rem);
+  margin: 0;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-height: 80vh;
+  width: auto;
+}
+
+/* Home-specific */
+.luca-stuff a {
+  text-decoration: none;
+  color: rgb(103, 100, 117);
+}
+
+.luca-stuff a:hover {
+  color: rgb(146, 136, 189);
+}
+
+.home-image-break {
+  border: var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.home-image-break img {
+  display: block;
+  width: 100%;
+  height: clamp(12rem, 35vw, 24rem);
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.portfolio-links h2 {
+  text-align: center;
+}
+
+.portfolio-outline {
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+/* Interests */
+.interest-image {
+  width: 100%;
+  height: 14rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: var(--panel);
+}
+
+.interest-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.logo-image {
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.logo-image img {
+  object-fit: contain;
+  object-position: center;
+}
+
+.interest-image:not(.logo-image) img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Projects */
+.project-box p {
+  margin: 0 0 1rem 0;
+}
+
+.project-box p:last-child {
+  margin-bottom: 0;
+}
+
+.project-label {
+  font-weight: 700;
+  color: white;
+}
+
+/* Resume */
+.resume-viewer {
+  margin-top: 1.5rem;
+  width: 100%;
+  height: 80vh;
+  border: var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.resume-viewer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Socials */
+.social-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.social-logo {
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.social-logo img {
+  max-height: 100%;
+  max-width: 8rem;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+.social-box p {
+  line-height: 1.5;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .nav-toggle {
     display: block;
@@ -163,426 +336,34 @@ body {
   .nav-menu a {
     padding: 0.9rem 0;
   }
-}
 
-/* Hero Section */
-div.hero {
-  padding-top: 0;
-  background: #e3e3e3;
-  background: linear-gradient(
-    180deg,
-    rgba(227, 227, 227, 1) 0%,
-    rgba(227, 227, 227, 1) 75%,
-    rgba(57, 56, 64, 1) 100%
-  );
+  .card-grid,
+  .portfolio-outline {
+    grid-template-columns: 1fr;
+  }
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  min-height: 30vh;
-  width: 90%;
-  margin: 2em auto;
-
-  border-radius: 5px;
-  border-width: 2px;
-  border-style: solid;
-  border-color: white;
-
-  padding: 0;
-}
-
-.hero .hero-text {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: right;
-}
-
-div.hero h1 {
-  color: black;
-  font-size: 6rem;
-  margin: 0;
-}
-
-div.hero p {
-  color: grey;
-  margin: 0;
-  font-size: 3rem;
-}
-
-.hero .hero-image {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-div.hero img {
-  max-height: 80vh;
-  width: auto;
-}
-
-@media (max-width: 768px) {
   .hero {
     flex-direction: column-reverse;
     min-height: auto;
     padding: 1rem;
-    gap: 1rem;
   }
 
-  .hero .hero-text {
+  .hero-text {
     text-align: center;
   }
 
-  .hero h1 {
-    font-size: 3rem;
-  }
-
-  .hero p {
-    font-size: 1.5rem;
-  }
-
-  .hero img {
+  .hero-image img {
     width: 100%;
     max-width: 20rem;
     max-height: none;
     height: auto;
   }
-}
 
-/* Image Break */
-.home-image-break {
-  width: 90%;
-  margin: 2rem auto;
-  border: 2px solid white;
-  border-radius: 0.75rem;
-  overflow: hidden;
-}
+  .home-image-break img {
+    height: 16rem;
+  }
 
-.home-image-break img {
-  display: block;
-  width: 100%;
-  max-height: 24rem;
-  object-fit: cover;
-  object-position: center 40%;
-}
-
-/* Luca Stuff Section */
-.luca-stuff {
-  width: 90%;
-  margin: 2rem auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 1.5rem;
-}
-
-.luca-stuff > div {
-  background-color: rgb(30, 29, 35);
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  border: 2px solid white;
-}
-
-.luca-stuff h2 {
-  margin-top: 0;
-}
-
-.luca-stuff p {
-  line-height: 1.6;
-}
-
-.luca-stuff a {
-  text-decoration: none;
-  color: rgb(103, 100, 117);
-}
-
-.luca-stuff a:hover {
-  color: rgb(146, 136, 189);
-}
-
-/* Portfolio Outline Section */
-.portfolio-links h2 {
-  text-align: center;
-}
-
-div.portfolio-outline {
-  width: 90%;
-  margin: 2rem auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 1.5rem;
-}
-
-div.portfolio-outline .portfolio-item {
-  display: block;
-  background-color: rgb(30, 29, 35);
-  color: white;
-  text-decoration: none;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  border: 2px solid white;
-}
-
-/* Interests */
-.interests-intro {
-  width: 90%;
-  margin: 2rem auto;
-  background-color: rgb(30, 29, 35);
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  border: 2px solid white;
-  box-sizing: border-box;
-}
-
-.interests-intro h1 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-.interests-intro p {
-  margin: 0;
-  line-height: 1.6;
-}
-
-.interests-container {
-  width: 90%;
-  margin: 2rem auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 1.5rem;
-}
-
-.interest-box {
-  background-color: rgb(30, 29, 35);
-  color: white;
-  text-decoration: none;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  border: 2px solid white;
-  display: block;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.interest-box:hover {
-  background-color: #111;
-  transform: translateY(-2px);
-}
-
-.interest-image {
-  width: 100%;
-  height: 14rem;
-  margin-bottom: 1rem;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  background-color: rgb(30, 29, 35);
-}
-
-.interest-image img {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.logo-image {
-  padding: 1rem;
-  box-sizing: border-box;
-}
-
-.logo-image img {
-  object-fit: contain;
-  object-position: center;
-}
-
-.interest-image:not(.logo-image) img {
-  object-fit: cover;
-  object-position: center;
-}
-
-.interest-box h2 {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-}
-
-.interest-box p {
-  margin: 0;
-  line-height: 1.6;
-}
-
-/* Projects */
-.projects-intro {
-  width: 90%;
-  margin: 2rem auto;
-  background-color: rgb(30, 29, 35);
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  border: 2px solid white;
-  box-sizing: border-box;
-}
-
-.projects-intro h1 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-.projects-intro p {
-  margin: 0;
-  line-height: 1.6;
-}
-
-.projects-container {
-  width: 90%;
-  margin: 2rem auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 1.5rem;
-}
-
-.project-box {
-  display: block;
-  background-color: rgb(30, 29, 35);
-  color: white;
-  text-decoration: none;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  border: 2px solid white;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.project-box:hover {
-  background-color: #111;
-  transform: translateY(-2px);
-}
-
-.project-box h2 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-}
-
-.project-box p {
-  margin: 0 0 1rem 0;
-  line-height: 1.6;
-}
-
-.project-box p:last-child {
-  margin-bottom: 0;
-}
-
-.project-label {
-  font-weight: 700;
-  color: white;
-}
-
-/* Resume Section */
-.resume-page {
-  width: 90%;
-  margin: 2rem auto;
-}
-
-.resume-header {
-  margin-bottom: 1.5rem;
-}
-
-.resume-header h1 {
-  margin-bottom: 0.5rem;
-}
-
-.resume-download {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.25rem;
-  background-color: rgb(30, 29, 35);
-  color: white;
-  text-decoration: none;
-  border: 2px solid white;
-  border-radius: 0.75rem;
-}
-
-.resume-viewer {
-  width: 100%;
-  height: 80vh;
-  border: 2px solid white;
-  border-radius: 0.75rem;
-  overflow: hidden;
-}
-
-.resume-viewer iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* Socials */
-.socials-intro {
-  display: block;
-  background-color: rgb(30, 29, 35);
-  color: white;
-  text-decoration: none;
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  border: 2px solid white;
-  width: 90%;
-  margin: 2rem auto;
-}
-
-.socials-container {
-  width: 90%;
-  margin: 2rem auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 1.5rem;
-  align-items: stretch;
-}
-
-.social-box {
-  background-color: rgb(30, 29, 35);
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  border: 2px solid white;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  text-decoration: none;
-  color: white;
-}
-
-.social-box,
-.portfolio-item {
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
-}
-
-a.social-box:hover,
-div.portfolio-outline .portfolio-item:hover {
-  background-color: #111;
-  transform: translateY(-2px);
-}
-
-.social-logo {
-  height: 5rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.social-logo img {
-  max-height: 100%;
-  max-width: 8rem;
-  width: auto;
-  height: auto;
-  display: block;
-}
-
-.social-box p {
-  line-height: 1.5;
+  .resume-viewer {
+    height: 60vh;
+  }
 }
