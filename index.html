@@ -11,16 +11,38 @@
       href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <script>
+      const navToggle = document.querySelector(".nav-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+        const expanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!expanded));
+      });
+    </script>
   </head>
   <body>
     <nav class="navbar">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/interests">Interests</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/resume">Resume</a></li>
-        <li><a href="/socials">Socials</a></li>
-      </ul>
+      <div class="nav-inner">
+        <a href="/" class="nav-brand">Luca Chaia</a>
+
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <ul class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/interests">Interests</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/resume">Resume</a></li>
+          <li><a href="/socials">Socials</a></li>
+        </ul>
+      </div>
     </nav>
     <main>
       <div class="hero">
