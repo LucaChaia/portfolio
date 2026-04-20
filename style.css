@@ -162,7 +162,7 @@ img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: right;
+  text-align: center;
 }
 
 .hero h1 {
@@ -350,6 +350,9 @@ img {
 
   .hero-text {
     text-align: center;
+  }
+  .hero-text p {
+    color: white;
   }
 
   .hero-image img {

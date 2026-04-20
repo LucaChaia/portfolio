@@ -14,16 +14,28 @@
   </head>
   <body>
     <nav class="navbar">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/interests">Interests</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/resume">Resume</a></li>
-        <li><a href="/socials">Socials</a></li>
-      </ul>
+      <div class="nav-inner">
+        <a href="/" class="nav-brand">Luca Chaia</a>
+
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <ul class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/interests">Interests</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/resume">Resume</a></li>
+          <li><a href="/socials">Socials</a></li>
+        </ul>
+      </div>
     </nav>
     <main>
-      <div class="socials-intro">
+      <div class="socials-intro container panel">
         <h1>Where To Find Me</h1>
         <p>
           I'm active on several platforms with different purposes. I always
@@ -31,10 +43,10 @@
         </p>
       </div>
 
-      <div class="socials-container">
+      <div class="socials-container container card-grid">
         <a
           href="https://github.com/LucaChaia"
-          class="social-box"
+          class="social-box card"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -53,7 +65,7 @@
         </a>
         <a
           href="https://www.linkedin.com/in/luca-chaia/"
-          class="social-box"
+          class="social-box card"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -69,7 +81,7 @@
         </a>
         <a
           href="https://lucachaia.itch.io/"
-          class="social-box"
+          class="social-box card"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -88,5 +100,15 @@
         </a>
       </div>
     </main>
+    <script>
+      const navToggle = document.querySelector(".nav-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+        const expanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!expanded));
+      });
+    </script>
   </body>
 </html>

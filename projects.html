@@ -14,16 +14,29 @@
   </head>
   <body>
     <nav class="navbar">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/interests">Interests</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/resume">Resume</a></li>
-        <li><a href="/socials">Socials</a></li>
-      </ul>
+      <div class="nav-inner">
+        <a href="/" class="nav-brand">Luca Chaia</a>
+
+        <button
+          class="nav-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <ul class="nav-menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/interests">Interests</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/resume">Resume</a></li>
+          <li><a href="/socials">Socials</a></li>
+        </ul>
+      </div>
     </nav>
+
     <main>
-      <div class="projects-intro">
+      <div class="projects-intro container panel">
         <h1>Projects</h1>
         <p>
           These are a few of my favorite technical projects, built to challenge
@@ -31,10 +44,10 @@
         </p>
       </div>
 
-      <div class="projects-container">
+      <div class="projects-container container card-grid">
         <a
           href="https://github.com/LucaChaia/CSCI-3202-Final-Project"
-          class="project-box"
+          class="project-box card"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -68,7 +81,7 @@
 
         <a
           href="https://lucachaia.itch.io/heartlands-adventure"
-          class="project-box"
+          class="project-box card"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -105,7 +118,7 @@
 
         <a
           href="https://github.com/Blueprint-Boulder/f23-bcna"
-          class="project-box"
+          class="project-box card"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -140,5 +153,15 @@
         </a>
       </div>
     </main>
+        <script>
+      const navToggle = document.querySelector(".nav-toggle");
+      const navMenu = document.querySelector(".nav-menu");
+
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+        const expanded = navToggle.getAttribute("aria-expanded") === "true";
+        navToggle.setAttribute("aria-expanded", String(!expanded));
+      });
+    </script>
   </body>
 </html>
