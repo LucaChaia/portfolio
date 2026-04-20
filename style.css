@@ -164,6 +164,72 @@ div.portfolio-outline .portfolio-item {
   border: 2px solid white;
 }
 
+/* Projects */
+.projects-intro {
+  width: 90%;
+  margin: 2rem auto;
+  background-color: rgb(30, 29, 35);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 2px solid white;
+  box-sizing: border-box;
+}
+
+.projects-intro h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.projects-intro p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.projects-container {
+  width: 90%;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1.5rem;
+}
+
+.project-box {
+  display: block;
+  background-color: rgb(30, 29, 35);
+  color: white;
+  text-decoration: none;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 2px solid white;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.project-box:hover {
+  background-color: #111;
+  transform: translateY(-2px);
+}
+
+.project-box h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.project-box p {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+.project-box p:last-child {
+  margin-bottom: 0;
+}
+
+.project-label {
+  font-weight: 700;
+  color: white;
+}
+
 /* Resume Section */
 .resume-page {
   width: 90%;
