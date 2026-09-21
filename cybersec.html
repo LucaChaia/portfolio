@@ -3,14 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luca Chaia | Resume</title>
+    <title>Luca Chaia | Cybersecurity</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
   </head>
   <body>
     <nav class="navbar">
@@ -20,8 +19,7 @@
         <button
           class="nav-toggle"
           aria-label="Toggle navigation"
-          aria-expanded="false"
-        >
+          aria-expanded="false">
           ☰
         </button>
 
@@ -35,26 +33,36 @@
         </ul>
       </div>
     </nav>
-    <main class="resume-page container">
-      <section class="resume-header panel">
-        <h1>Resume</h1>
-        <p>View my resume below or download a copy.</p>
-        <a
-          class="resume-download btn"
-          href="assets/docs/LucaChaia_Resume_PublicFacing.pdf"
-          download
-        >
-          Download Resume
-        </a>
-      </section>
-
-      <section class="resume-viewer">
-        <iframe
-          src="assets/docs/LucaChaia_Resume_PublicFacing.pdf"
-          title="Luca Chaia Resume"
-        ></iframe>
-      </section>
+    <main>
+      <div class="hero container">
+        <div class="hero-text">
+          <!-- Heading -->
+          <h1>My Cybersecurity Journey</h1>
+          <!-- Supporting Copy -->
+          <p><code>Current Opsec Level: Opera GX</code></p>
+        </div>
+      </div>
+      <div class="cybersec-intro card-grid">
+        <div class="luca-cyber panel">
+          <h2>A collection of my cyber projects</h2>
+          <p>
+            This will serve as a mini portfolio for my Cybersecurity specific
+            projects, so I can have them all in one place
+          </p>
+        </div>
+      </div>
+      <div class="google-cybersec-cert card-grid">
+        <h2>Google Cybersecurity Certificate</h2>
+        <div class="botium-toys panel">
+          <iframe
+            src="assets/docs/Botium Toys - Controls and compliance checklist.pdf"
+            title="Luca Chaia Resume"></iframe>
+          <h3>Botium Toys</h3>
+          <p>Controls and Frameworks</p>
+        </div>
+      </div>
     </main>
+
     <script>
       const navToggle = document.querySelector(".nav-toggle");
       const navMenu = document.querySelector(".nav-menu");
